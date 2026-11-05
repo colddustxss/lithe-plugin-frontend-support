@@ -21,7 +21,7 @@ jobs:
           RELEASE_REPOSITORY: ${{ github.repository }}
         run: npm run package -- --expect-tag "$GITHUB_REF_NAME" --expect-repository "$RELEASE_REPOSITORY"
       - run: npm run validate-package
-      - run: git diff --exit-code -- lithe-plugin-index.json io.github.colddustxss.frontend-support/grammars
+      - run: node scripts/check-generated.mjs
       - name: Check out pinned official Store rules
         uses: actions/checkout@v4
         with:

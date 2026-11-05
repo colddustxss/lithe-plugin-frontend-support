@@ -24,7 +24,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run verify
       - name: Check generated index and grammar
-        run: git diff --exit-code -- lithe-plugin-index.json io.github.colddustxss.frontend-support/grammars
+        run: node scripts/check-generated.mjs
       - name: Check out pinned official Store rules
         uses: actions/checkout@v4
         with:
