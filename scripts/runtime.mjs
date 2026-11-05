@@ -68,5 +68,6 @@ export async function buildVueRuntime(root, packageRoot) {
   const entry = await readFile(path.join(root, 'src/server.cjs'), 'utf8');
   await writeFile(path.join(target, 'server.cjs'), entry.replace('__FRONTEND_VERSION__', manifest.version));
   await copyFile(path.join(root, 'src/snippets.cjs'), path.join(target, 'snippets.cjs'));
+  await copyFile(path.join(root, 'src/comments.cjs'), path.join(target, 'comments.cjs'));
   return { target, notices, dependencies: [...packages.values()].map(({ name, version }) => ({ name, version })) };
 }

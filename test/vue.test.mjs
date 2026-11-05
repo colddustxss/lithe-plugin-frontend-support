@@ -135,6 +135,40 @@ test('packaged standalone Vue server provides editing features in a real multi-f
     const fixed = await s.request('textDocument/diagnostic', requestFor(s));
     assert.ok(!fixed.items.some(item => item.code === 2304 && item.message.includes('ref')));
   });
+  await t.test('source comment actions survive the packaged LSP and native-style resolve round trip', async () => {
+    const source = '<script setup lang="ts">\nconst count = 1\n</script>\n<template>\n  <div>example</div>\n</template>\n<style scoped>\n.card { color: red; }\n</style>';
+    for (const [needle, expected] of [
+      ['count', '// const count = 1'],
+      ['example', '<!-- <div>example</div> -->'],
+      ['.card', '/* .card { color: red; } */'],
+    ]) {
+      await s.open(source);
+      const position = s.position(needle);
+      const actions = await s.request('textDocument/codeAction', { ...requestFor(s), range: { start: position, end: position }, context: { diagnostics: [] } });
+      const action = actions.find(action => action.kind === 'refactor.rewrite.vue.comment');
+      assert.ok(action, needle);
+      const resolved = await s.request('codeAction/resolve', action);
+      const edits = editsFor(resolved.edit, s.uri);
+      assert.ok(edits.length);
+      assert.ok(applyTextEdits(s.text, edits).includes(expected));
+      assert.equal(resolved.edit.documentChanges[0].textDocument.uri, s.uri);
+      assert.equal(typeof resolved.edit.documentChanges[0].textDocument.version, 'number');
+    }
+  });
+  await t.test('HTML comment repair remains commented and valid after applying the LSP quick fix', async () => {
+    await s.open('<script setup lang="ts">\n<!-- const unused: number = 1 -->\n</script>\n<template><div /></template>');
+    const position = s.position('unused');
+    const actions = await s.request('textDocument/codeAction', { ...requestFor(s), range: { start: position, end: position }, context: { diagnostics: [], only: ['quickfix'] } });
+    const action = actions.find(action => action.kind === 'quickfix.vue.comment');
+    assert.ok(action);
+    const resolved = await s.request('codeAction/resolve', action);
+    const fixed = applyTextEdits(s.text, editsFor(resolved.edit, s.uri));
+    assert.match(fixed, /\/\/ const unused: number = 1/);
+    assert.ok(!fixed.includes('<!--'));
+    await s.open(fixed);
+    const report = await s.request('textDocument/diagnostic', requestFor(s));
+    assert.deepEqual(report.items.filter(item => item.severity === 1), []);
+  });
   await t.test('document structure, folding and formatting remain available through the official server', async () => {
     await s.open('<script setup lang="ts">\nconst count=1\n</script>\n<template><div>{{count}}</div></template>');
     const symbols = await s.request('textDocument/documentSymbol', requestFor(s));

@@ -7,9 +7,9 @@
       "author": "colddustxss",
       "repository": "https://github.com/colddustxss/lithe-plugin-frontend-support",
       "homepage": "https://github.com/colddustxss/lithe-plugin-frontend-support#readme",
-      "description": "Frontend development support for Lithe, currently supporting Vue. Includes tag, attribute, directive and CSS completion, snippets, hover documentation, quick fixes, go to definition, rename, auto imports and syntax highlighting. Requires Node.js 20+ and project dependencies; macOS.",
+      "description": "Frontend development support for Lithe, currently supporting Vue. Includes completion, snippets, hover documentation, quick fixes, navigation, rename, auto imports, syntax highlighting and contextual comment code actions for template/script/style. Requires Node.js 20+ and project dependencies; macOS.",
       "localizedDescriptions": {
-        "zh-Hans": "为 Lithe 提供前端开发支持，现已支持 Vue。提供标签、属性、指令与 CSS 补全、代码片段、悬浮说明、快速修复、跳转定义、重命名、自动导入及语法高亮，帮助阅读和编写 Vue 模板、脚本与样式。需要 Node.js 20+ 和项目依赖；当前支持 macOS。"
+        "zh-Hans": "为 Lithe 提供前端开发支持，现已支持 Vue。提供标签、属性、指令与 CSS 补全、代码片段、悬浮说明、快速修复、跳转定义、重命名、自动导入及语法高亮。支持通过代码操作按模板、脚本与样式切换注释，并修复脚本或样式中误用的 HTML 注释。需要 Node.js 20+ 和项目依赖；当前支持 macOS。"
       },
       "license": "Apache-2.0",
       "tags": [
@@ -20,7 +20,7 @@
       ],
       "versions": [
         {
-          "version": "0.2.0",
+          "version": "0.2.1",
           "pluginAPIVersion": 3,
           "requires": {
             "languages": 2,
@@ -34,8 +34,8 @@
                 "darwin-arm64",
                 "darwin-x64"
               ],
-              "downloadURL": "https://github.com/colddustxss/lithe-plugin-frontend-support/releases/download/v0.2.0/frontend-support-0.2.0-darwin.zip",
-              "sha256": "9372019cf29a82345d2c87eba71f73cbbd9c57052049f3774bb5065784e7217f"
+              "downloadURL": "https://github.com/colddustxss/lithe-plugin-frontend-support/releases/download/v0.2.1/frontend-support-0.2.1-darwin.zip",
+              "sha256": "4faaf1120e133a883f57f3c1f16f20b61eef2df7897349594e6da77fa084f8c3"
             }
           ]
         }

@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "io.github.colddustxss.frontend-support",
   "displayName": "Frontend Support · 前端支持",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "pluginAPIVersion": 3,
   "requires": {
     "languages": 2,

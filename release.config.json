@@ -1,8 +1,8 @@
 {
   "repository": "https://github.com/colddustxss/lithe-plugin-frontend-support",
   "releaseDate": "2026-11-05",
-  "description": "Frontend development support for Lithe, currently supporting Vue. Includes tag, attribute, directive and CSS completion, snippets, hover documentation, quick fixes, go to definition, rename, auto imports and syntax highlighting. Requires Node.js 20+ and project dependencies; macOS.",
+  "description": "Frontend development support for Lithe, currently supporting Vue. Includes completion, snippets, hover documentation, quick fixes, navigation, rename, auto imports, syntax highlighting and contextual comment code actions for template/script/style. Requires Node.js 20+ and project dependencies; macOS.",
   "localizedDescriptions": {
-    "zh-Hans": "为 Lithe 提供前端开发支持，现已支持 Vue。提供标签、属性、指令与 CSS 补全、代码片段、悬浮说明、快速修复、跳转定义、重命名、自动导入及语法高亮，帮助阅读和编写 Vue 模板、脚本与样式。需要 Node.js 20+ 和项目依赖；当前支持 macOS。"
+    "zh-Hans": "为 Lithe 提供前端开发支持，现已支持 Vue。提供标签、属性、指令与 CSS 补全、代码片段、悬浮说明、快速修复、跳转定义、重命名、自动导入及语法高亮。支持通过代码操作按模板、脚本与样式切换注释，并修复脚本或样式中误用的 HTML 注释。需要 Node.js 20+ 和项目依赖；当前支持 macOS。"
   }
 }
