@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "id": "io.github.colddustxss.frontend-support",
+  "displayName": "Frontend Support · 前端支持",
+  "version": "0.2.0",
+  "pluginAPIVersion": 3,
+  "requires": {
+    "languages": 2,
+    "languageServers": 1,
+    "serverProcess": 1
+  },
+  "vendor": {
+    "id": "io.github.colddustxss",
+    "displayName": "colddustxss",
+    "signatureRequirement": "none"
+  },
+  "permissions": [
+    "languageServer.launch"
+  ],
+  "activationEvents": [
+    "onLanguage:vue"
+  ],
+  "languages": [
+    {
+      "id": "vue",
+      "displayName": "Vue",
+      "fileExtensions": [
+        "vue"
+      ],
+      "projectFileNames": [
+        "tsconfig.json",
+        "jsconfig.json"
+      ],
+      "grammar": {
+        "kind": "monarch",
+        "path": "grammars/vue.monarch.json"
+      },
+      "configuration": {
+        "blockComment": [
+          "<!--",
+          "-->"
+        ],
+        "brackets": [
+          [
+            "{",
+            "}"
+          ],
+          [
+            "[",
+            "]"
+          ],
+          [
+            "(",
+            ")"
+          ]
+        ],
+        "autoClosingPairs": [
+          [
+            "{",
+            "}"
+          ],
+          [
+            "[",
+            "]"
+          ],
+          [
+            "(",
+            ")"
+          ],
+          [
+            "\"",
+            "\""
+          ],
+          [
+            "'",
+            "'"
+          ],
+          [
+            "<!--",
+            "-->"
+          ]
+        ]
+      }
+    }
+  ],
+  "languageServers": [
+    {
+      "languageID": "vue",
+      "languageIdentifier": "vue",
+      "launch": {
+        "kind": "runtime",
+        "tool": "node",
+        "minimumVersion": "20",
+        "entry": "bin/lithe-vue-language-server.cjs"
+      },
+      "arguments": [
+        "--stdio"
+      ]
+    }
+  ]
+}

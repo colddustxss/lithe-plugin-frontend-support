@@ -1,0 +1,26 @@
+{
+  "@vscode/l10n@0.0.18": {
+    "file": "vscode-l10n-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/microsoft/vscode-l10n/d84684765c74fb24ce22abaab7941d85925c96f9/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+  },
+  "@vue/compiler-vue2@2.7.16": {
+    "file": "vue2-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/vuejs/vue/v2.7.16/LICENSE",
+    "sha256": "17fb24bc303763f3fe1911ee24e5225c7ad59f0e3a5d8123e9b730c100a306a6"
+  },
+  "de-indent@1.0.2": {
+    "file": "de-indent-MIT.txt",
+    "url": "https://registry.npmjs.org/de-indent/1.0.2",
+    "kind": "metadata-declared-MIT",
+    "metadataSHA256": "e490e1a063542f059140b60012beabf7f7b66c2404fae59f8d8c58f1bcf1208f",
+    "sha256": "58183986b39f1f700a66f9376ffa07fa483691e5d561839ed8d4b4b0fd11a9fd"
+  },
+  "@johnsoncodehk/pug-beautify@0.2.2": {
+    "file": "pug-beautify-MIT.txt",
+    "url": "https://registry.npmjs.org/@johnsoncodehk/pug-beautify/0.2.2",
+    "kind": "metadata-declared-MIT",
+    "metadataSHA256": "3472ea54db0ea080a2203f45b2418d36552eb32e2662bc7a2f97b618ab6383ba",
+    "sha256": "272f5c29f6a5aa9dde5358114c54eaabda88fa28249e643f76b2caf3d5c87a8f"
+  }
+}

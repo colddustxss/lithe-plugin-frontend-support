@@ -1,0 +1,37 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build && npm test
+      - name: Build immutable archive
+        env:
+          RELEASE_REPOSITORY: ${{ github.repository }}
+        run: npm run package -- --expect-tag "$GITHUB_REF_NAME" --expect-repository "$RELEASE_REPOSITORY"
+      - run: npm run validate-package
+      - run: git diff --exit-code -- lithe-plugin-index.json io.github.colddustxss.frontend-support/grammars
+      - name: Check out pinned official Store rules
+        uses: actions/checkout@v4
+        with:
+          repository: Lithe-IDEA/Lithe-store
+          ref: 722a1c28b4dedd0fcd450e636b183a81aff093ca
+          path: .cache/lithe-store
+          persist-credentials: false
+      - name: Validate with official Store rules
+        run: npm run validate-store -- .cache/lithe-store/scripts/validate-index.mjs
+      - name: Publish release (Lua template flow)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/*.zip dist/*.sha256 lithe-plugin-index.json --verify-tag --title "Frontend Support $GITHUB_REF_NAME" --notes-file dist/release-notes.md

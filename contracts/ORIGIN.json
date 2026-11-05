@@ -1,0 +1,9 @@
+{
+  "revision": "753fc8c1325f3f877690331fd48575b3db3623e7",
+  "baseURL": "https://raw.githubusercontent.com/1lck/Lithe-IDEA/753fc8c1325f3f877690331fd48575b3db3623e7/shared/contracts/plugins/v1/",
+  "sha256": {
+    "plugin-manifest.schema.json": "7ed0714e4d6120dc4098410db07ca5286f64677b05f03b7532f0ca73bdda2e5d",
+    "native-ui.schema.json": "62c6e49ec274c52efb70cc3562f261e11d4dfb8cc59c8e13f7774321266f2837",
+    "plugin-index.schema.json": "6771cb0e8c1ba101e6fc90b436de1b74f057ff0d58cc90f92e669edc9a102fc6"
+  }
+}

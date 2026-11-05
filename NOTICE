@@ -1,0 +1,11 @@
+Frontend Support for Lithe
+Copyright 2026 colddustxss
+
+Integration code: Apache License 2.0 (see LICENSE).
+Based on the Apache-2.0 Lithe Lua plugin template by Lithe Community:
+https://github.com/Lithe-IDEA/lithe-plugin-lua
+Template revision: 72b8df0e634005892ac7cb6f62b2ae560016bd13
+
+Vue/Volar, TypeScript and other runtime packages retain their own licenses
+and attribution. See THIRD_PARTY_NOTICES.txt and the original files under
+language-server/node_modules in the installable package.

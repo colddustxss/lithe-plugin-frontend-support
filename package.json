@@ -1,0 +1,33 @@
+{
+  "name": "lithe-plugin-frontend-support",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "description": "Frontend development support for Lithe, currently supporting Vue.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "package": "node scripts/package.mjs",
+    "validate-package": "node scripts/validate.mjs",
+    "verify": "npm run build && npm test && npm run package && npm run validate-package",
+    "validate-store": "node scripts/check-store.mjs"
+  },
+  "dependencies": {
+    "@vue/language-server": "2.2.12",
+    "typescript": "5.8.3"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "fflate": "0.8.2",
+    "monaco-editor": "0.55.1",
+    "vscode-jsonrpc": "8.2.0",
+    "vue": "3.5.44"
+  },
+  "overrides": {
+    "@emmetio/css-parser": "https://codeload.github.com/ramya-rao-a/css-parser/tar.gz/370c480ac103bd17c7bcfb34bf5d577dc40d3660"
+  }
+}

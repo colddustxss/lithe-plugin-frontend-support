@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.cache/
+.DS_Store
+io.github.colddustxss.frontend-support/language-server/
+io.github.colddustxss.frontend-support/LICENSE
+io.github.colddustxss.frontend-support/NOTICE
+io.github.colddustxss.frontend-support/README.md
+io.github.colddustxss.frontend-support/VALIDATION.md
+io.github.colddustxss.frontend-support/CHANGELOG.md
+io.github.colddustxss.frontend-support/THIRD_PARTY_NOTICES.txt
+io.github.colddustxss.frontend-support/BUILD_INFO.json

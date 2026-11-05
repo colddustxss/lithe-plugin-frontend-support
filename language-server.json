@@ -1,0 +1,9 @@
+{
+  "name": "Vue Language Server",
+  "version": "2.2.12",
+  "source": "https://github.com/vuejs/language-tools",
+  "revision": "0b13bf1966398ea3949b6b02d09b251ddc9a51eb",
+  "mode": "standalone",
+  "typescript": "5.8.3",
+  "dependencyLock": "package-lock.json"
+}
